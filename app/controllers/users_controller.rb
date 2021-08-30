@@ -27,23 +27,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def edit
-  #   @user = User.find(params[:id])
-  # end
-  #
-  # def update
-  #   @user = User.find(params[:id])
-  #   if !params[:attraction_id].nil?
-  #     ride = @user.rides.build(attraction_id: params[:attraction_id])
-  #     ride.take_ride
-  #     @user.save
-  #     redirect_to user_path(@user)
-  #   end
-  # end
-
-  def destroy
-  end
-
   private
 
   def user_params
@@ -51,6 +34,6 @@ class UsersController < ApplicationController
   end
 
   def logged_in?
-    true if !session[:user_id].nil?
+    true if session[:user_id]
   end
 end

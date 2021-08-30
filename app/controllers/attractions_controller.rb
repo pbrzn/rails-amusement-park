@@ -38,9 +38,6 @@ class AttractionsController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   private
 
   def current_user
@@ -48,7 +45,7 @@ class AttractionsController < ApplicationController
   end
 
   def is_admin
-    redirect_to user_path(current_user) if current_user.admin == false
+    redirect_to user_path(current_user) if !current_user.admin
   end
 
   def attraction_params
